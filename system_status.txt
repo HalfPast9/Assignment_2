@@ -1,0 +1,82 @@
+time: 31; current trace: FORK, 17
+PID | Program      | Part | Size(MB) | State
+---------------------------------------------
+  1 | init         |    5 |        1 | running
+  0 | init         |    6 |        1 | waiting
+
+Partitions:
+#  | Size | Code
+----------------
+ 1 |   40 | free
+ 2 |   25 | free
+ 3 |   15 | free
+ 4 |   10 | free
+ 5 |    8 | init
+ 6 |    2 | init
+
+time: 220; current trace: EXEC program1, 16
+PID | Program      | Part | Size(MB) | State
+---------------------------------------------
+  1 | program1     |    4 |       10 | running
+  0 | init         |    6 |        1 | waiting
+
+Partitions:
+#  | Size | Code
+----------------
+ 1 |   40 | free
+ 2 |   25 | free
+ 3 |   15 | free
+ 4 |   10 | program1
+ 5 |    8 | init
+ 6 |    2 | init
+
+time: 249; current trace: FORK, 15
+PID | Program      | Part | Size(MB) | State
+---------------------------------------------
+  2 | program1     |    3 |       10 | running
+  0 | init         |    6 |        1 | waiting
+  1 | program1     |    4 |       10 | waiting
+
+Partitions:
+#  | Size | Code
+----------------
+ 1 |   40 | free
+ 2 |   25 | free
+ 3 |   15 | program1
+ 4 |   10 | program1
+ 5 |    8 | init
+ 6 |    2 | init
+
+time: 530; current trace: EXEC program2, 33
+PID | Program      | Part | Size(MB) | State
+---------------------------------------------
+  2 | program2     |    2 |       15 | running
+  0 | init         |    6 |        1 | waiting
+  1 | program1     |    4 |       10 | waiting
+
+Partitions:
+#  | Size | Code
+----------------
+ 1 |   40 | free
+ 2 |   25 | program2
+ 3 |   15 | program1
+ 4 |   10 | program1
+ 5 |    8 | init
+ 6 |    2 | init
+
+time: 864; current trace: EXEC program2, 33
+PID | Program      | Part | Size(MB) | State
+---------------------------------------------
+  1 | program2     |    1 |       15 | running
+  0 | init         |    6 |        1 | waiting
+
+Partitions:
+#  | Size | Code
+----------------
+ 1 |   40 | program2
+ 2 |   25 | program2
+ 3 |   15 | program1
+ 4 |   10 | program1
+ 5 |    8 | init
+ 6 |    2 | init
+
